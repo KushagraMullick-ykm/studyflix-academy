@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { BookOpen, Search, Menu, X, User, Bell, GraduationCap } from "lucide-react";
+import { BookOpen, Search, Menu, X, User, Bell, Brain } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
@@ -16,8 +16,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <GraduationCap className="h-7 w-7 text-brand-blue" />
-            <span className="text-xl font-bold text-brand-darkBlue">StudyFlix</span>
+            <Brain className="h-7 w-7 text-primary" />
+            <span className="text-xl font-bold">Locnix.ai</span>
           </Link>
           
           {/* Desktop navigation */}
@@ -27,24 +27,24 @@ const Navbar = () => {
                 <div className="relative">
                   <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <Input
-                    placeholder="Search for subjects, topics..."
+                    placeholder="Search for flashcards..."
                     className="pl-8 bg-gray-50 border-0"
                   />
                 </div>
               </div>
               
               <div className="flex items-center space-x-6">
-                <Link to="/subjects" className="text-gray-700 hover:text-brand-blue font-medium">
-                  Subjects
+                <Link to="/features" className="text-gray-700 hover:text-primary font-medium">
+                  Features
                 </Link>
-                <Link to="/practice" className="text-gray-700 hover:text-brand-blue font-medium">
-                  Practice
-                </Link>
-                <Link to="/dashboard" className="text-gray-700 hover:text-brand-blue font-medium">
+                <Link to="/dashboard" className="text-gray-700 hover:text-primary font-medium">
                   Dashboard
                 </Link>
-                <Bell className="h-5 w-5 text-gray-600 cursor-pointer hover:text-brand-blue" />
-                <Link to="/login">
+                <Link to="/study" className="text-gray-700 hover:text-primary font-medium">
+                  Study
+                </Link>
+                <Bell className="h-5 w-5 text-gray-600 cursor-pointer hover:text-primary" />
+                <Link to="/signin">
                   <Button>Sign In</Button>
                 </Link>
               </div>
@@ -70,20 +70,20 @@ const Navbar = () => {
         {isMobile && isMenuOpen && (
           <div className="mt-3 p-3 border-t space-y-3">
             <Input
-              placeholder="Search for subjects, topics..."
+              placeholder="Search for flashcards..."
               className="bg-gray-50 border-0 mb-3"
             />
-            <Link to="/subjects" className="block py-2 text-gray-700 hover:text-brand-blue">
-              Subjects
+            <Link to="/features" className="block py-2 text-gray-700 hover:text-primary">
+              Features
             </Link>
-            <Link to="/practice" className="block py-2 text-gray-700 hover:text-brand-blue">
-              Practice
-            </Link>
-            <Link to="/dashboard" className="block py-2 text-gray-700 hover:text-brand-blue">
+            <Link to="/dashboard" className="block py-2 text-gray-700 hover:text-primary">
               Dashboard
             </Link>
+            <Link to="/study" className="block py-2 text-gray-700 hover:text-primary">
+              Study
+            </Link>
             <div className="pt-2">
-              <Link to="/login">
+              <Link to="/signin">
                 <Button className="w-full">Sign In</Button>
               </Link>
             </div>
